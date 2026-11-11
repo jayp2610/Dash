@@ -1,0 +1,70 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Dash</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap">
+<style>
+:root{--bg:#f6f7f9;--panel:#fff;--fg:#16202b;--muted:#566372;--line:#d9dee5;--accent:#1c5fd4;--good:#1a7f4b;--bad:#c23b3b;--font-head:"Space Grotesk","Segoe UI",sans-serif;--font-body:"Inter","Segoe UI",system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#11161c;--panel:#19202a;--fg:#e6ebf1;--muted:#9aa7b5;--line:#2a3441;--accent:#6ea2ff;--good:#5cc98d;--bad:#ff7b7b;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#11161c;--panel:#19202a;--fg:#e6ebf1;--muted:#9aa7b5;--line:#2a3441;--accent:#6ea2ff;--good:#5cc98d;--bad:#ff7b7b;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:16px/1.65 var(--font-body);padding-block:24px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:36px}
+nav{display:flex;flex-wrap:wrap;gap:8px 22px;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:14px}
+nav .brand{font-family:var(--font-head);font-weight:700;font-size:1.3rem;margin-right:auto;color:var(--fg);text-decoration:none}
+nav a{color:var(--muted);text-decoration:none;font-size:.95rem}nav a:hover{color:var(--accent)}
+h1,h2,h3{font-family:var(--font-head);line-height:1.2;text-wrap:balance;margin:0}
+h1{font-size:2.4rem}h2{font-size:1.4rem;margin-bottom:10px}h3{font-size:1.05rem;margin-bottom:4px}
+p{margin:0 0 12px;max-width:65ch}.lead{font-size:1.15rem;color:var(--muted)}
+.tag{display:inline-block;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--accent);margin-bottom:8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}.grid>div{min-width:0}
+.grid p,li{color:var(--muted)}ul{margin:0 0 12px;padding-left:20px;max-width:65ch;display:flex;flex-direction:column;gap:6px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:20px}
+.scroll{overflow-x:auto}table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;font-size:.92rem;min-width:460px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}th{font-weight:600;color:var(--muted);font-size:.8rem;letter-spacing:.04em;text-transform:uppercase}
+.up{color:var(--good)}.down{color:var(--bad)}.note{font-size:.85rem;color:var(--muted);margin:12px 0 0}
+.flow{display:flex;flex-wrap:wrap;gap:10px}.flow>div{flex:1 1 150px;min-width:0;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:12px;font-size:.9rem}
+.flow b{display:block;font-family:var(--font-head);margin-bottom:2px}.flow span{color:var(--muted)}
+dl{margin:0;display:grid;grid-template-columns:minmax(120px,190px) 1fr;gap:10px 20px}dt{font-weight:600}dd{margin:0;color:var(--muted);min-width:0}
+a{color:var(--accent)}.updated{color:var(--muted);font-size:.9rem}
+footer{border-top:1px solid var(--line);padding-top:20px;font-size:.85rem;color:var(--muted);display:flex;flex-direction:column;gap:8px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (max-width:520px){dl{grid-template-columns:1fr;gap:2px}dd{margin-bottom:10px}h1{font-size:1.9rem}}
+</style>
+</head><body><div class="wrap"><nav><a class="brand" href="index.html">Dash</a><a href="index.html">About</a><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a></nav>
+<header><div class="tag">VALORANT stats · prototype</div><h1>Dash</h1>
+<p class="lead">A free tool that turns a player's own VALORANT match data into round-by-round stats, playstyle groups and weapon predictions, so beginners can see what to work on after a match.</p></header>
+<section><h2>What it is</h2>
+<p>Dash is a statistical analysis tool for players who want to understand their own play. A player signs in, opts in to sharing their own match data, and loads a match. The dashboard then shows what happened in every round: kills, deaths, assists, damage, headshot rate, the weapon bought, the credits at the start of the round and whether the round was won, split by attack and defense.</p>
+<p>Each stat is compared with the match average and explained in plain words, for example: "Aim is okay but the player rarely helps teammates get kills." Dash reports only on finished matches. It does not rank players, does not scout opponents and gives nothing during a match.</p></section>
+<section><h2>Who it is for</h2><div class="grid">
+<div><h3>Beginners</h3><p>Players who do not know which of their numbers (aim, damage, team play, economy) is holding them back.</p></div>
+<div><h3>Improving players</h3><p>Players who want to track the same stats across several matches and see if a change in habits helped.</p></div>
+<div><h3>Students of the game</h3><p>People learning how the in-game economy and weapon choice go together.</p></div></div></section>
+<section><h2>What the player sees</h2><div class="panel"><div class="scroll"><table>
+<thead><tr><th>Stat</th><th>Player</th><th>Match average</th><th>Difference</th></tr></thead><tbody>
+<tr><td>Kills / deaths</td><td>1.33</td><td>1.06</td><td class="up">+0.28</td></tr>
+<tr><td>Headshot %</td><td>20</td><td>47</td><td class="down">-27</td></tr>
+<tr><td>Damage per round</td><td>122</td><td>94</td><td class="up">+28</td></tr>
+<tr><td>Assists per round</td><td>0.09</td><td>0.14</td><td class="down">-0.05</td></tr>
+<tr><td>Round win %</td><td>57</td><td>50</td><td class="up">+7</td></tr></tbody></table></div>
+<p class="note">Example values from made-up data, shown only to illustrate the layout.</p></div>
+<p style="margin-top:16px">Views: match overview, a sortable table of players, a page for one player with weapon habits and a round-by-round damage chart, playstyle groups, weapon usage by side, a weapon predictor, and a list of rounds. Players choose which columns to show. The interface uses six colours.</p></section>
+<section><h2>How it works</h2><div class="flow">
+<div><b>1. Sign in</b><span>The player opts in to share their own matches</span></div>
+<div><b>2. Match data</b><span>Official VALORANT match data for that player's matches</span></div>
+<div><b>3. Anonymize</b><span>Other players become p1, p2 ... and names and IDs are dropped</span></div>
+<div><b>4. Analyse</b><span>Rules and two machine learning methods run in the browser</span></div>
+<div><b>5. Show</b><span>Charts and plain-language feedback</span></div></div></section>
+<section><h2>The machine learning</h2><dl>
+<dt>Playstyle groups (k-means)</dt><dd>Players in a match are grouped by headshot rate, damage per round, assists per round, K/D and survival. Each group is named from its averages, such as "support-leaning all-rounder".</dd>
+<dt>Weapon prediction (k-nearest neighbours)</dt><dd>The model learns from the player's own earlier rounds how credits, side and round number relate to the weapon bought, then predicts the likely weapon. Its accuracy is shown next to a simple baseline so the player can see whether it beats guessing.</dd>
+<dt>Good / not good rating</dt><dd>A nearest-neighbours check on headshot rate and damage that the player can teach with their own examples, shown next to a fixed-rule rating.</dd></dl></section>
+<section><h2>Riot API use</h2><dl>
+<dt>APIs used</dt><dd>VAL-MATCH-V1 only: the match list for the signed-in player and the match details (round results, player stats per round, economy).</dd>
+<dt>When data is requested</dt><dd>Only when the player asks to load their matches, one match at a time. A match already downloaded is not downloaded again.</dd>
+<dt>Rate limits</dt><dd>Requests stay under the key's limits, and Dash waits as long as the API asks after a 429 response.</dd>
+<dt>Not used</dt><dd>No live game data, no game client hooks, no memory reading and no other Riot API.</dd></dl></section>
+<section><h2>Current status and limits</h2>
+<p>Dash is a working prototype made for a school project about using AI for good. The dashboard and the match converter have been tested with example data. They have not yet been tested with live Riot API responses, which is the reason for the production key application. Riot Sign On is not built yet.</p>
+<ul><li>Riot's match data gives how many shots hit the head, not which kills were headshots, so headshot % is an estimate and is labelled that way.</li>
+<li>Shots fired are not provided, so accuracy is not shown for VALORANT.</li>
+<li>The rating cut-offs (for example what counts as a good headshot rate) are starting values that the player can change.</li></ul></section>
+<footer><div><a href="terms.html">Terms of Service</a> · <a href="privacy.html">Privacy Policy</a></div><div>Dash is not endorsed by Riot Games and does not reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games and all associated properties are trademarks or registered trademarks of Riot Games, Inc.</div></footer></div></body></html>
